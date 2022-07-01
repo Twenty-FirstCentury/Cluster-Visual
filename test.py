@@ -22,7 +22,7 @@ for container in client.containers():
     print("")
     y = json.loads(final)
 
-    value = (y["Image"])[1]
+    value = (y["Image"])[0]
     print(value)
 
 
