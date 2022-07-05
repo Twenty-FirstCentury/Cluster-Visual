@@ -21,25 +21,20 @@ client = docker.from_env()
 jsondump = json.dumps(client.containers())
 loadedjson = json.loads(jsondump)
 
-ipa1 = loadedjson['Ports']
-ipb1 = json.dumps(ipa1)
-ipc1 = json.loads(ipb1)
-ipd1 = ipc1[0]
-ip1 = ipd1['IP']
-
 
 with Diagram("Docker Diagram", show=False):
 
     for i in loadedjson:
         with Cluster("Name: " + i["Image"]):
             
-            with Cluster("Subcontainer 1 (port: 3000)"):
+            with Cluster("Subcontainer" + ("(port: " + i["Id"] + ")")):
                 Subcontainer1 = [Custom("Node JS", "./Images/docker.png")] 
     
-    print("done!")
+
+print("done!")
             
   
-print(ip1) 
+
         
 
         
@@ -151,21 +146,6 @@ print(ip1)
 # if __name__ == '__main__':
 #     app.run(debug=True)  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
- 
 
 
 
