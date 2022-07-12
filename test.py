@@ -1,3 +1,5 @@
+#Urim Suh && Kenan Orlovic 2022 ELSYS 
+
 from diagrams import Cluster, Diagram, Edge
 from diagrams.custom import Custom
 import docker
