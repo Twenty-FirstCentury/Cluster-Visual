@@ -1,6 +1,6 @@
 # Docker Cluster Visual
 ![Graphviz Logo](https://graphviz.org/Resources/app.png)
-
+(Graphviz Logo)
 
 ### Pre Setup
 ```
