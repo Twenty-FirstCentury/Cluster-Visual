@@ -1,5 +1,3 @@
-## Docker Cluster Visual
-
 1. CD into root project directory.
 2. Install python modules: 
   - pip3 install diagrams
