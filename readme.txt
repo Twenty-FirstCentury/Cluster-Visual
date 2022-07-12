@@ -5,3 +5,6 @@
 3. You have to run some containers or you will run into some errors.
 4. Type "python3 test.py" 
                           
+
+
+50. If your computer breaks, it's your fault. just kidding. 
