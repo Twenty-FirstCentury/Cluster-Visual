@@ -14,7 +14,7 @@
 
 ### Post Setup
 ```
-1. Go to the root diurectory of the project folder and you will see the .jpeg image. 
+1. Go to the root directory of the project folder and you will see the .jpeg image. 
 ```
 
                           
