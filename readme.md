@@ -1,5 +1,5 @@
 # Docker Cluster Visual
-
+![Graphviz Logo](https://graphviz.org/Resources/app.png)
 
 
 ### A How-To on the Setup
