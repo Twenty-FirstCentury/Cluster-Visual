@@ -17,7 +17,7 @@ loadedjson = json.loads(jsondump)
 with Diagram("Docker Diagram", show=False, direction="TB"):
 
     host = Custom("HOST", "./Images/computer-icon.png")
-    web = Custom("The WEB", "./Images/web.png")
+    web = Custom("WEB", "./Images/web.png")
 
     for i in loadedjson:                                       
         
