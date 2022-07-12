@@ -20,4 +20,4 @@
                           
 
 
-# Disclaimer!!! If your computer breaks, it's your fault. just kidding. 
+# Disclaimer!!! If your computer breaks, it's your fault. (Just Kidding) 
