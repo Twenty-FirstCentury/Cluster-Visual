@@ -17,9 +17,8 @@
 1. Go to the root directory of the project folder and you will see the .jpeg image. 
 ```
 
-                          
-
-
-
+                      
+<br/>
+<br/>
 
 #### Thank you Georgia Tech Research Institute!!
