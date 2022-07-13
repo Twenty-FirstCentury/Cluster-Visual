@@ -1,5 +1,6 @@
 #2022 Summer GTRI ELSYS Internship Project
 
+
 from diagrams import Cluster, Diagram, Edge
 from diagrams.custom import Custom
 import docker
@@ -14,9 +15,23 @@ client = docker.from_env()
 jsondump = json.dumps(client.containers())
 loadedjson = json.loads(jsondump)
 
-with Diagram("Docker Diagram", show=False, direction="TB"):
 
-    host = Custom("HOST", "./Images/computer-icon.png")
+graph_attr = {
+
+    "fontsize": "150",
+
+    "splines": "spline",
+    "splines": "true",
+
+    "nodesep": "3",
+
+    "dpi": "300",
+
+}
+
+
+with Diagram("\n \n" "Docker Container" "\n" "Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):
+
     web = Custom("WEB", "./Images/web.png")
 
     for i in loadedjson:                                       
@@ -24,7 +39,7 @@ with Diagram("Docker Diagram", show=False, direction="TB"):
         if i["Mounts"] and 'Name' in (i["Mounts"][0]):                              #Docker Volume Names
             # print("Name: Exists")
             namevar = str(i["Mounts"][0]["Name"])
-            namevar2 = (namevar[0:20] + "...")
+            namevar2 = (namevar[0:30] + "...")
         else:
             # print("Name: doesn't exist")
             namevar2 = "N/A"
@@ -53,8 +68,11 @@ with Diagram("Docker Diagram", show=False, direction="TB"):
 
         with Cluster("Name: " + i["Image"]):
             
-            with Cluster("IP: " + ipvar + " | " + "Public Port: " + publicportvar + " | " + "Private Port: " + privateportvar):
+            with Cluster("Command: \n" + str(i["Command"]) + "\n" + "\n" + "Volume Name: " + "\n" + namevar2):
                 
-                Subcontainer1 = [Custom("Command: \n" + str(i["Command"]) + "\n  " + "\n" + "Volume Name: " + "\n" + namevar2 + "...","./Images/docker.png")] 
+                Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
 
-                
+                Subcontainer1 >> web
+                web >> Subcontainer1 
+
+
