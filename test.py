@@ -1,4 +1,4 @@
-#2022 Summer GTRI ELSYS Internship Project by Urim Suh && Kenan Orlovic
+#2022 Summer GTRI ELSYS Internship Project by Urim Suh & Kenan Orlovic
 
 
 from diagrams import Cluster, Diagram, Edge
