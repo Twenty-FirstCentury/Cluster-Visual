@@ -33,8 +33,8 @@ graph_attr = {
 with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):
 
     host = Custom("HOST", "./Images/computer-icon.png")
-    # web = Custom("WEB", "./Images/web.png")
-   #$ print(loadedjson)
+    web = Custom("WEB", "./Images/web.png")
+
     for i in loadedjson:                                       
         
         if i["Mounts"] and 'Name' in (i["Mounts"][0]):                              #Docker Volume Names
@@ -71,18 +71,14 @@ with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, directi
             
             with Cluster("Command: \n" + str(i["Command"]) + "\n" + "\n" + "Volume Name: " + "\n" + namevar2):
                 if ipvar == 'N/A':
-                      Subcontainer0 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
+                    Subcontainer0 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
+
+                    Subcontainer0 - host
 
                 else:
                     Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
                     
-                    host - Subcontainer1
-
-
-
-
-                Subcontainer0
-            
+                    web - Subcontainer1 - host
 
 
                 
