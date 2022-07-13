@@ -1,4 +1,4 @@
-#2022 Summer GTRI ELSYS Internship Project
+#2022 Summer GTRI ELSYS Internship Project by Urim Suh && Kenan Orlovic
 
 
 from diagrams import Cluster, Diagram, Edge
@@ -18,20 +18,26 @@ loadedjson = json.loads(jsondump)
 
 graph_attr = {
 
+    "shape": "ellipse",
+
     "fontsize": "150",
 
     "splines": "spline",
-    "splines": "true",
 
-    "nodesep": "3",
+    "nodesep": "4",
+    "ranksep": "10",
 
-    "dpi": "300",
+    "fixedsize": "true",
+    "width": "20in",
+
+    "dpi": "250",
 
 }
 
 
-with Diagram("\n \n" "Docker Container" "\n" "Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):
+with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):
 
+    host = Custom("Host", "./Images/computer-icon.png")
     web = Custom("WEB", "./Images/web.png")
 
     for i in loadedjson:                                       
@@ -72,7 +78,9 @@ with Diagram("\n \n" "Docker Container" "\n" "Diagram", show=False, direction="T
                 
                 Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
 
+                web >> Subcontainer1 >> host
+
+                host >> Subcontainer1 
                 Subcontainer1 >> web
-                web >> Subcontainer1 
 
 
