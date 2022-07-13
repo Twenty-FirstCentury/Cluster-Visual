@@ -22,9 +22,4 @@
 
 
 
-
-#### Disclaimer!!! If your computer breaks, it's your fault. (Just Kidding) 
-
-
-
-Credits: Kenan Orlovic and I. 
+#### Credits: Kenan Orlovic and I. 
