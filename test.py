@@ -37,8 +37,8 @@ graph_attr = {
 
 with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):
 
-    host = Custom("Host", "./Images/computer-icon.png")
-    web = Custom("WEB", "./Images/web.png")
+    host = Custom("HOST", "./Images/computer-icon.png")
+    # web = Custom("WEB", "./Images/web.png")
 
     for i in loadedjson:                                       
         
@@ -78,9 +78,18 @@ with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, directi
                 
                 Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
 
-                web >> Subcontainer1 >> host
+                host >> Subcontainer1
+                Subcontainer1 >> host
 
-                host >> Subcontainer1 
-                Subcontainer1 >> web
+                
+
+
+
+    
+
+      
+
+                
+
 
 
