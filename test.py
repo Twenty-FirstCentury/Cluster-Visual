@@ -1,6 +1,3 @@
-#GTRI ELSYS Project by Urim Suh & Kenan Orlovic 2022
-
-
 from diagrams import Cluster, Diagram, Edge
 from diagrams.custom import Custom
 import docker
@@ -77,16 +74,15 @@ with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, directi
                       Subcontainer0 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
 
                 else:
-                    Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
+                    Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] - host
 
 
 
 
                 Subcontainer0
-                host - Subcontainer1
+            
 
 
-#Public IP and port = web
       
 
                 
