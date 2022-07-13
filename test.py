@@ -74,7 +74,9 @@ with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, directi
                       Subcontainer0 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
 
                 else:
-                    Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] - host
+                    Subcontainer1 = [Custom("IP: " + ipvar + " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
+                    
+                    host - Subcontainer1
 
 
 
@@ -82,7 +84,5 @@ with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, directi
                 Subcontainer0
             
 
-
-      
 
                 
