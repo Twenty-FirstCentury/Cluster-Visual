@@ -22,4 +22,4 @@
 
 
 
-#### Credits: Kenan Orlovic and I. 
+#### Thank you Georgia Tech Research Institute!!
