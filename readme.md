@@ -24,4 +24,4 @@
 <br/>
 <br/>
 
-#### Thank you Georgia Tech Research Institute!!
+#### Thank you Mr. Desh and Georgia Tech Research Institute!!
