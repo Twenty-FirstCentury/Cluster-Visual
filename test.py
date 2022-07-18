@@ -1,8 +1,9 @@
-#(Me: Urim Suh) + (Amazing Mentor: Desh Sharma) + (CoWorker: Kenan Orlovic)
+#Urim Suh
 #2022
 #STEM@GTRI
 #ELSYS
 #High-School Summer Internship
+#Many thanks to Mr. Desh Sharma, my Mentor and teacher, who helped me code this entire thing. 
 
 
 from diagrams import Cluster, Diagram, Edge
@@ -40,82 +41,77 @@ graph_attr = {
     "dpi": "250",
 
 }
-with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):
+
+
+with Diagram("\n \n \n \n \n \n" "Docker Container Diagram", show=False, direction="TB", graph_attr=graph_attr, outformat="jpg"):\
+
     for net in network_list.keys():
-        print("NetworkName " + net)
+        #print("NetworkName " + net) Debug
+
+
         bridge = Custom(net, "./Images/bridge.png")
-# sys.exit()
-#for net in network_list.keys():
 
 
-
-
-        # host = Custom("HOST" + "\n" + "(0.0.0.0)", "./Images/computer-icon.png")
-        # web = Custom("WEB", "./Images/web.png")
-        #bridge = Custom("NETWORK", "./Images/bridge.png")
-        # for net in network_list.keys():
-        #     print(net)
-        
         for i in loadedjson: 
-           # print(i)      
-            if i["Image"]:
-                print ("ImageName " + i["Image"])
-                
-            
+           # print(i)  Debug    
+
+            # if i["Image"]:
+            #     print ("ImageName " + i["Image"])
+
             if i["Mounts"] and 'Name' in (i["Mounts"][0]):                          
-                # print("Name: Exists")
+                # print("Name: Exists") Debug
                 namevar = str(i["Mounts"][0]["Name"])
                 namevar2 = (namevar[0:40] + "...")
             else:
-                # print("Name: doesn't exist")
+                # print("Name: doesn't exist") Debug
                 namevar2 = "                              N/A                              "
 
             if i["Ports"] and 'IP' in i["Ports"][0]:                                    
-                # print("IP: Exists")
+                # print("IP: Exists") Debug
                 ipvar = str(i["Ports"][0]["IP"])
             else:
-                # print("IP: doesn't exist")
+                # print("IP: doesn't exist") Debug
                 ipvar = "N/A"
 
             if i['NetworkSettings']['Networks']:
                 networkName = list(i['NetworkSettings']['Networks'].keys())[0]
-                print("Network is :" + str(networkName))
+                # print("Network is :" + str(networkName)) Debug
                 netvar = str(networkName)
             else:
-                # print("Network: doesn't exist")
+                # print("Network: doesn't exist") Debug
                 netvar = "N/A"
-            
                 
             if i["Ports"] and 'PublicPort' in i["Ports"][0]:                             
-                # print("PublicPort: Exists")
+                # print("PublicPort: Exists") Debug
                 publicportvar = str(i["Ports"][0]["PublicPort"])
             else:
-                # print("PublicPort: doesn't exist")
+                # print("PublicPort: doesn't exist") Debug
                 publicportvar = "N/A"
             
             if i["Ports"] and 'PrivatePort' in i["Ports"][0]:                        
-                # print("PrivatePort: Exists")
+                # print("PrivatePort: Exists") Debug
                 privateportvar = str(i["Ports"][0]["PrivatePort"])
             else:
-                # print("PublicPort: doesn't exist")
+                # print("PublicPort: doesn't exist") Debug
                 privateportvar = "N/A"
 
                 
             with Cluster("Name: " + i["Image"]):
                 
                 with Cluster("Command: \n" + str(i["Command"]) + "\n" + "\n" + "Volume Name: " + "\n" + namevar2):
-                    print("Check for Network :" + netvar)
+
+                    # print("Check for Network :" + netvar) Debug
+
                     if netvar == net:
                         Subcontainer0 = [Custom("IP: " + ipvar + "\n" + "Network: " + netvar +  "\n" + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
-                        print("Check for len")
-                        print(len(Subcontainer0))
+
+                        # print("Check for len") Debug
+                        # print(len(Subcontainer0)) Debug
+
                         if len(Subcontainer0) != 0:
                             Subcontainer0 - bridge 
                         
     
-                        # else:
-                        #     Subcontainer1 = [Custom("IP: " + ipvar + "\n" + "Network: " + netvar +  " \n " + "Public Port: " + publicportvar + "\n" + "Private Port: " + privateportvar, "./Images/docker.png")] 
 
-                        #     Subcontainer1 - bridge
                 
             
