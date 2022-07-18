@@ -3,7 +3,7 @@
 #STEM@GTRI
 #ELSYS
 #High-School Summer Internship
-#Many thanks to Mr. Desh Sharma, my Mentor and teacher, who helped me code this entire thing. 
+#Many thanks to Mr. Desh Sharma, my Mentor and teacher, who helped me code this.
 
 
 from diagrams import Cluster, Diagram, Edge
