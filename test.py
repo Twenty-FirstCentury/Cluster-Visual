@@ -1,4 +1,4 @@
-#Urim Suh
+#Urim Suh & Kenan Orlovic
 #2022
 #STEM@GTRI
 #ELSYS
