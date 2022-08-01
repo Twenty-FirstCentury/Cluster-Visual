@@ -1,10 +1,7 @@
-#Urim Suh & Kenan Orlovic
+
 #2022
 #STEM@GTRI
 #ELSYS
-#High-School Summer Internship
-#Many thanks to Mr. Desh Sharma, my Mentor, Supervisor, and Teacher, who helped me code this.
-
 
 from diagrams import Cluster, Diagram, Edge
 from diagrams.custom import Custom
